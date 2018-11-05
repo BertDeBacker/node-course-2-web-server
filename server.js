@@ -4,6 +4,10 @@ const fs = require('fs');
 
 var app = express();
 
+//Specifically for heroky, the portnumber must be an environment variable named 'port'.
+//If the environment variable does not exist, then we use 3550.
+var port = process.env.PORT || 3550;
+
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
@@ -84,6 +88,9 @@ app.get('/bad', (req, res) => {
     });
 })
 
-app.listen(3550, () => {
-    console.log('Server is up on port 3550.');
+
+//Specifically for heroky, the portnumber must be an environment variable named 'port'.
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`);
+
 });
