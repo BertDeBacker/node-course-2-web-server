@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
     reqHost = req.headers.host;
     try {
         res.render('home.hbs', {
-            pageTitle: 'Home.hbs Page',
+            pageTitle: 'Home.hbs',
             newText: 'home home home',
             usefullLinks: `http://${reqHost}//${usefullLinks}`,
             helpPage: `http://${reqHost}//${helpPage}`
@@ -57,8 +57,21 @@ app.get('/about', (req, res) => {
     reqHost = req.headers.host;
     try {
         res.render('about.hbs', {
-            pageTitle: 'About.hbs Page',
+            pageTitle: 'About.hbs',
             newText: 'about about about',
+            helpPage: `http://${reqHost}//${helpPage}`
+        });
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+app.get('/projects', (req, res) => {
+    reqHost = req.headers.host;
+    try {
+        res.render('projects.hbs', {
+            pageTitle: 'Projects.hbs',
+            newText: 'The full projects portfolio comes here.',
             helpPage: `http://${reqHost}//${helpPage}`
         });
     } catch (error) {
