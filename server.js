@@ -173,6 +173,10 @@ app.get('/Programming', (req, res) => {
                 link: 'https://github.com/',
                 text: 'Github',
                 description: 'To publish NodeJs websites'
+            }, {
+                link: 'https://www.w3schools.com/howto/howto_js_full_page_tabs.asp',
+                text: 'w3school',
+                description: 'Website with all kid of web design reference materials'
             }]
         });
     } catch (error) {
