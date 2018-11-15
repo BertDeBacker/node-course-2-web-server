@@ -124,6 +124,33 @@ app.get('/links', (req, res) => {
     }
 })
 
+app.get('/DGB', (req, res) => {
+    reqHost = req.headers.host;
+    try {
+        res.render('linksProgramming.hbs', {
+            pageTitle: 'DGB Acts met vuur',
+            newText: 'Misschien iets voor volgend jaar?',
+            usefullLinks: `http://${reqHost}//${usefullLinks}`,
+            helpPage: `http://${reqHost}//${helpPage}`,
+            pageLinks: [{
+                link: 'https://www.entertainmentartiesten.com/vuurspuwer-vuuranimatie-vuurvreten/',
+                text: 'Vuurspuwer en Annimatie',
+                description: ''
+            }, {
+                link: 'https://www.gusta.be/vuurspuwer/',
+                text: 'Gusta vuurspectakel',
+                description: ''
+            }, {
+                link: 'https://bedrijfs-animatie.be/vuurspuwer/',
+                text: 'Vuurspuwer',
+                description: ''
+            }]
+        });
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 
 app.get('/Programming', (req, res) => {
     reqHost = req.headers.host;
@@ -177,6 +204,26 @@ app.get('/Programming', (req, res) => {
                 link: 'https://www.w3schools.com/howto/howto_js_full_page_tabs.asp',
                 text: 'w3school',
                 description: 'Website with all kid of web design reference materials'
+            }, {
+                link: 'https://www.getpostman.com/',
+                text: 'postman',
+                description: 'Postman is a toolbox for testing and monitoring API\'s.'
+            }, {
+                link: "https://httpstatuses.com/",
+                text: 'https statuses',
+                description: 'All https statuses that exist'
+            }, {
+                link: 'http://blog.getpostman.com/2018/04/11/first-5-things-to-try-if-youre-new-to-postman/?mkt_tok=eyJpIjoiTnpZeE4ySTRObVV6WWpNdyIsInQiOiJZUEtrQnFtVjRCcTdsWllTVXN2ZmhnMFc2cWhGNjZqdmtQRlduRGZmeEpYTTRGTGxxa0N6T3IraEVGSUF3d3g0RW5cL1FYbUNuUUh5Sm5OaFJyWjNoSG9vOHFVT2xYalR4SjY4MmdrS0pQMG5JUmpKMlplSDBBSDQxdXRjUFg0ZzAifQ%3D%3D',
+                text: 'Try Postmans, 5 things to try out.',
+                description: 'Postman introduction'
+            }, {
+                link: 'https://javascript.info/strict-mode',
+                text: 'JavaScript Info',
+                description: 'Javascrip programming info'
+            }, {
+                link: 'https://www.knime.com/',
+                text: 'KNIME',
+                description: 'Open source ETL and much more'
             }]
         });
     } catch (error) {
