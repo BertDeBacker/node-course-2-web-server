@@ -80,14 +80,24 @@ app.get('/about', (req, res) => {
     }
 })
 
+
 app.get('/projects', (req, res) => {
     reqHost = req.headers.host;
     try {
-        res.render('main.hbs', {
-            pageTitle: 'Projects',
-            newText: 'The full projects portfolio comes here.',
+        res.render('linksProgramming.hbs', {
+            pageTitle: 'Bert\'s development learning projects',
+            newText: 'Here you find links to the deployed heroku applications.',
             usefullLinks: `http://${reqHost}//${usefullLinks}`,
-            helpPage: `http://${reqHost}//${helpPage}`
+            helpPage: `http://${reqHost}//${helpPage}`,
+            pageLinks: [{
+                link: 'https://enigmatic-springs-21183.herokuapp.com/',
+                text: 'Chat app',
+                description: 'Ongoing project - chat and location app'
+            }, {
+                link: 'https://obscure-coast-37769.herokuapp.com/',
+                text: 'Todo App',
+                description: 'Project with secure login and todos'
+            }]
         });
     } catch (error) {
         console.log(error);
