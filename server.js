@@ -267,7 +267,10 @@ app.get('/Programming', (req, res) => {
                     link: 'https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API',
                     text: 'Geolocation module embedded in all browsers',
                     description: 'This geolocation is support by alomost all browser. It is developped by developer.mozilla.org'
-
+                }, {
+                    link: 'http://momentjs.com/docs/',
+                    text: 'momentjs date/time library',
+                    description: 'Mostly used library for date/time handling in JavaScript'
                 }
 
             ]
