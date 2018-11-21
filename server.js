@@ -231,6 +231,11 @@ app.get('/Programming', (req, res) => {
                     text: 'JavaScript Info',
                     description: 'Javascrip programming info'
                 }, {
+                    link: 'https://developer.mozilla.org/nl/docs/Web/JavaScript',
+                    text: 'Mozilla foundation - Javascript documentation',
+                    description: 'documentation about the fantastic mozilla libraries to be used in your websites.'
+                },
+                {
                     link: 'https://www.knime.com/',
                     text: 'KNIME',
                     description: 'Open source ETL and much more'
