@@ -70,6 +70,11 @@
             "link": "https://medium.freecodecamp.org/the-complete-javascript-handbook-f26b2c71719c",
             "text": "Complete JavaScript handbook",
             "description": "Free online book about JavaScript."
+        }, {
+            "link": "http://thehipperelement.com/post/75476711614/ux-crash-course-31-fundamentals",
+            "text": "Crash course for User Experience design",
+            "description": "31 articles to overview a real world UX design"
+
         },
         {
             "link": "https://hackernoon.com/beginning-your-web-development-journey-start-here-7084346f5762",
@@ -89,7 +94,12 @@
             "link": "https://twitter.com",
             "text": "Follow these guys on twitter for more specialised info.",
             "description": "Caldera (shameless plug), Dan Abramov, Kyle Mathews, Christian Nwamba, Wes Bos, Jason Miller 🦊 ⚛, Scott Tolinski, Ryan Florence"
+        }, {
+            "link": "https://blog.risingstack.com",
+            "text": "risingstack.com",
+            "description": "Blog on NodsJs"
         }
+
     ],
     "documentation": [{
             "link": "https://www.w3schools.com/howto/howto_js_full_page_tabs.asp",
