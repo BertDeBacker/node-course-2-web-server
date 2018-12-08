@@ -135,6 +135,12 @@ app.get('/bad', (req, res) => {
     });
 })
 
+app.post('/lala', (req, res) => {
+    console.log('Ja ja we komen tot bij de server.')
+    console.log(req)
+    res.send({ response: 'jajaj het zal wel lukken.' })
+})
+
 //Specifically for heroky, the portnumber must be an environment variable named 'port'.
 app.listen(port, () => {
     console.log(`Server is up on port ${port}.`)
@@ -147,9 +153,14 @@ app.listen(port, () => {
 
 //Function to read data from file 
 function getDataFromJSON(fileName) {
-    //var config = require('./config.json')
-    var data = require(fileName)
-    return data
+
+    //var data = require(fileName)
+    //return data
+
+    const cs = require('./structureClasses')
+    let page = new cs.Page(fileName)
+    return page
+
 }
 
 /**************************************** */
@@ -165,7 +176,7 @@ hbs.registerHelper('screamIt', (text) => {
 
 hbs.registerHelper('customList', (book) => {
     //The json content file has a structure of "key : [{linkItem}, {linkItem}]"
-    //linkItem has a structure of "{link, text, description}"
+    //linkItem has a structure of "{link, title, description}"
     //This function generates a <DIV> per "key + linkItems"
     //Only the first "key + linkItems" are visible
     var out = ''
@@ -182,21 +193,24 @@ hbs.registerHelper('customList', (book) => {
     //out = customListSelector(book)
 
     out = '<DIV id="all">'
+
+    let msg = 'Type of book is ' + book.constructor.name
+    console.log(msg)
+    
     if (book) {
-        for (list in book) {
+        book.sections.forEach (section => {
             var display = (counter > 0) ? 'hidden' : ''
 
-            out = out + '<div id="' + list + '" ' + display + '>'
+            out = out + '<div id="' + section.name + '" ' + display + '>'
 
-            out = out + '<h1>' + list + '</h1>' + '\n'
-            book[list].forEach(element => {
-                out = out + '<a href=\"' + element.link + '\">' + element.text + '</a><br>' + element.description + '<br><br>' + '\n'
+            out = out + '<h1>' + section.name + '</h1>' + '\n'
+            section.articles.forEach(element => {
+                out = out + '<a href=\"' + element.link + '\">' + element.title + '</a><br>' + element.description + '<br><br>' + '\n'
             });
             out = out + '</div>'
-
-            //counter++
-        }
+        })
     }
+
     out = out + '</DIV>'
     return new hbs.SafeString(out)
 })
@@ -205,9 +219,9 @@ hbs.registerHelper('customListSelector', (book) => {
     var out = ''
 
     if (book) {
-        for (list in book) {
-            out = out + `<button onclick="myFunction(\'${list}\')">${list}</button>\n`
-        }
+        book.sections.forEach(section => {
+            out = out + `<button onclick="myFunction(\'${section.name}\')">${section.name}</button>\n`
+        })       
     }
     return new hbs.SafeString(out)
 })

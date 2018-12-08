@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <style>
     input[type=text],
     select {
@@ -41,14 +43,15 @@
 
 <body>
     <div>
-        <form action="/action_page.php">
+        <form id="MyForm" action="/action_page.php">
             <h3>New article</h3>
             <label for="Category">Category</label>
-            <select id="Category" name="Category">
+            <select id="category" name="Category">
             <option value="blank"></option>
             <option value="training">training</option>
             <option value="articles">articles</option>
             <option value="reference">reference</option>
+        </select>
 
             <label for="title">Title</label>
             <input type="text" id="title" name="title" placeholder="The title..">
@@ -59,12 +62,14 @@
             <label for="Description">Description</label>
             <input type="text" id="description" name="description" placeholder="Describe the article..">
 
-    </select>
-
             <input type="submit" value="Submit">
         </form>
+
+        <button id="me">click me to send</button>
     </div>
 
 </body>
+
+<script src="play2.js"></script>
 
 </html>

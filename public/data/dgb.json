@@ -1,15 +1,25 @@
 {
-    "acts": [{
-        "link": "https://www.entertainmentartiesten.com/vuurspuwer-vuuranimatie-vuurvreten/",
-        "text": "Vuurspuwer en Annimatie",
-        "description": ""
-    }, {
-        "link": "https://www.gusta.be/vuurspuwer/",
-        "text": "Gusta vuurspectakel",
-        "description": ""
-    }, {
-        "link": "https://bedrijfs-animatie.be/vuurspuwer/",
-        "text": "Vuurspuwer",
-        "description": ""
-    }]
+    "_name": "dgb.json",
+    "_sections": [
+        {
+            "_name": "acts",
+            "_articles": [
+                {
+                    "_link": "https://www.entertainmentartiesten.com/vuurspuwer-vuuranimatie-vuurvreten/",
+                    "_description": "lee",
+                    "_title": "Vuurspuwer en Annimatie"
+                },
+                {
+                    "_link": "https://www.gusta.be/vuurspuwer/",
+                    "_description": "lee",
+                    "_title": "Gusta vuurspectakel"
+                },
+                {
+                    "_link": "https://bedrijfs-animatie.be/vuurspuwer/",
+                    "_description": "leeg",
+                    "_title": "Vuurspuwer"
+                }
+            ]
+        }
+    ]
 }

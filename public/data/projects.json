@@ -1,11 +1,20 @@
 {
-    "heroku": [{
-        "link": "https://enigmatic-springs-21183.herokuapp.com/",
-        "text": "Chat app",
-        "description": "Ongoing project - chat and location app"
-    }, {
-        "link": "https://obscure-coast-37769.herokuapp.com/",
-        "text": "Todo App",
-        "description": "Project with secure login and todos"
-    }]
+    "_name": "projects.json",
+    "_sections": [
+        {
+            "_name": "heroku",
+            "_articles": [
+                {
+                    "_link": "https://enigmatic-springs-21183.herokuapp.com/",
+                    "_description": "Ongoing project - chat and location app",
+                    "_title": "Chat app"
+                },
+                {
+                    "_link": "https://obscure-coast-37769.herokuapp.com/",
+                    "_description": "Project with secure login and todos",
+                    "_title": "Todo App"
+                }
+            ]
+        }
+    ]
 }
